@@ -31,8 +31,8 @@
           <category android:name="android.intent.category.BROWSABLE" />
           <data
                   android:host="baskerville42.eu.auth0.com"
-                  android:pathPrefix="/android/${applicationId}/callback"
-                  android:scheme="${applicationId}" />
+                  android:pathPrefix="/android/com.epify/callback"
+                  android:scheme="com.epify" />
       </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
