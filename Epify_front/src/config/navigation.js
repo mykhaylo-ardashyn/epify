@@ -3,16 +3,16 @@ import { StackNavigator, TabNavigator } from "react-navigation";
 import { Icon } from "react-native-elements";
 
 import AuthScreen from "../containers/AuthScreenContainer";
-import HomeScreen from "../containers/HomeScreenContainer";
+import PersonalScreen from "../containers/PersonalScreenContainer";
 import FeedScreen from "../containers/FeedScreenContainer";
-import ProfileScreen from "../containers/ProfileScreenContainer";
+import CategoriesScreen from "../containers/CategoriesScreenContainer";
 
 import colors from "../theme/colors";
 
 export const navTypes = {
-	HOME: "home",
+	CATEGORIES: "categories",
 	FEED: "feed",
-	PROFILE: "profile",
+	PERSONAL: "personal",
 
 	AUTH: "auth",
 	LOGGED: "logged"
@@ -20,12 +20,20 @@ export const navTypes = {
 
 const MainNavigator = TabNavigator(
 	{
-		[navTypes.HOME]: {
-			screen: HomeScreen,
+		[navTypes.PERSONAL]: {
+			screen: PersonalScreen,
 			navigationOptions: {
 				// header: null,
-				tabBarLabel: "Home",
-				tabBarIcon: <Icon name="home" color={colors.white} />
+				tabBarLabel: "Personal",
+				tabBarIcon: <Icon name="person-outline" color={colors.white} />
+			}
+		},
+		[navTypes.CATEGORIES]: {
+			screen: CategoriesScreen,
+			navigationOptions: {
+				// header: null,
+				tabBarLabel: "Categories",
+				tabBarIcon: <Icon name="list" color={colors.white} />
 			}
 		},
 		[navTypes.FEED]: {
@@ -35,18 +43,10 @@ const MainNavigator = TabNavigator(
 				tabBarLabel: "Feed",
 				tabBarIcon: <Icon name="arrow-drop-down-circle" color={colors.white} />
 			}
-		},
-		[navTypes.PROFILE]: {
-			screen: ProfileScreen,
-			navigationOptions: {
-				// header: null,
-				tabBarLabel: "Profile",
-				tabBarIcon: <Icon name="person-outline" color={colors.white} />
-			}
 		}
 	},
 	{
-		initialRouteName: navTypes.HOME,
+		initialRouteName: navTypes.PERSONAL,
 		tabBarPosition: "bottom",
 		tabBarOptions: {
 			style: {
