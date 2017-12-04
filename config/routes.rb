@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      resource :signs, only: [:create, :destroy]
+      resource :profile, only: :show
+      resources :stories, only: :index
+    end
+  end
 end

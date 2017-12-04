@@ -9,6 +9,7 @@
 	"dependencies": {
 		"react": "16.0.0",
 		"react-native": "0.50.4",
+		"react-native-auth0": "^1.2.1",
 		"react-native-elements": "^0.18.4",
 		"react-native-sound": "^0.10.4",
 		"react-native-vector-icons": "^4.4.2",
