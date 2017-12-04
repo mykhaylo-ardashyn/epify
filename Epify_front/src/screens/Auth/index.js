@@ -12,19 +12,6 @@ const auth0 = new Auth0(credentials);
 
 class AuthScreen extends Component {
 
-	// handleLogout() {
-   //  if (Platform.OS === 'android') {
-   //    this.setState({ accessToken: null });
-   //  } else {
-   //    auth0.webAuth
-   //      .clearSession({})
-   //      .then(success => {
-   //        this.setState({ accessToken: null });
-   //      })
-   //      .catch(error => console.log(error));
-   //  }
-	// }
-
 	constructor(props) {
 		super(props);
 
