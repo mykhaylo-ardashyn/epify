@@ -15,7 +15,7 @@ export function getDefaultHeaders(state) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    token ? { Authorization: `Bearer ${token}` } : null
+    // token ? { 'Access-token': `${token}` } : null
   );
 }
 
@@ -24,7 +24,7 @@ export function makeData(action, headers = {}) {
 
   return {
     ...action.payload,
-    url: `${config.HOST}${config.NAMESPACE}${url}`,
+    url: `${config.HOST}${url}`,
     options: {
       headers: {
         ...headers,

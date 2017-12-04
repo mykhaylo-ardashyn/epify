@@ -44,11 +44,11 @@ const s = StyleSheet.create({
 		marginTop: 10,
 
 		backgroundColor:colors.black,
-		borderRadius:10,
 	},
 	text:{
 		color:colors.white,
 		marginLeft:10,
 		marginBottom:2,
+		fontWeight: 'bold',
 	}
 });

@@ -1,8 +1,14 @@
 import { all } from "redux-saga/effects";
-import apiSaga from "./api";
+import api from "./api";
 import application from "./application";
 import auth from "./auth";
+import stories from "./stories";
 
 export default function* rootSaga() {
-	yield all([apiSaga(), application(), auth()]);
+	yield all([
+		api(), 
+		application(), 
+		auth(), 
+		stories()
+	]);
 }

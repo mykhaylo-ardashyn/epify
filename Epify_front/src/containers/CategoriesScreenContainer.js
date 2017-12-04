@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ProfileScreen from "../screens/Profile";
+import CategoriesScreen from "../screens/Categories";
 import { signOut } from "../modules/auth/actions";
 
 const mapStateToProps = state => {
@@ -10,4 +10,4 @@ const mapDispatchToProps = {
 	signOut
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesScreen);

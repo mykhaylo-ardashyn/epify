@@ -1,6 +1,6 @@
 import { handleActions } from "redux-actions";
 import {
-  attachSession,
+  attachToken,
   detachSession,
   attachUser,
   signInCancel
@@ -20,9 +20,9 @@ export default handleActions(
       isAuthorized: true
     }),
     [detachSession]: () => defaultState,
-    [attachUser]: (state, { payload }) => ({
+    [attachToken]: (state, { payload }) => ({
       ...state,
-      user: payload
+      token: payload
     }),
     [signInCancel]: (state, { payload }) => ({
       ...state,
