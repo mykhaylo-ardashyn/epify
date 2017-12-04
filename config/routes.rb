@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :signs, only: [:create, :destroy]
       resource :profile, only: :show
-      resources :stories, only: :index
+      resources :stories, only: [:index, :show]
     end
   end
 end

@@ -12,13 +12,17 @@ User.create(
   ]
 )
 
-Story.create(
-  [
-    { name: 'Allahu Akbar', description: 'lalala', rating: 10, audio_url: '', image_url: ''},
-    { name: 'Some name', description: 'lalala', rating: 10, audio_url: '', image_url: ''},
-    { name: 'Some name', description: 'lalala', rating: 10, audio_url: '', image_url: ''}
-  ]
-)
+User.all.each do |current_user|
+  Story.create(
+    [
+      { name: 'Illuminati Confirmed', description: 'lalala', rating: 101, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Illuminati+Confirmed.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Illuminati+Confirmed.jpg', author_id: current_user.id},
+      { name: 'Allahu Akbar', description: 'lalala', rating: 213, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Allahu+Akbar.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Allahu+Akbar.jpg', author_id: current_user.id},
+      { name: 'Help Me', description: 'lalala', rating: 30, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Help+Me.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Help+Me.jpg', author_id: current_user.id},
+      { name: 'Just Do It', description: 'lalala', rating: 334, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Just+Do+It.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Just+Do+It.jpg', author_id: current_user.id},
+      { name: 'Wasted', description: 'lalala', rating: 234, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Wasted.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Wasted.jpg', author_id: current_user.id},
+    ]
+  )
+end
 
 # { name: 'Allahu Akbar', description: 'lalala', raiting: 10, url: '', image_url: ''}
 # { name: 'Help Me', description: 'lalala', raiting: 10, url: '', image_url: ''}

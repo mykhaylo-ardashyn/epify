@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171204101600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "story", force: :cascade do |t|
+  create_table "stories", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "rating"

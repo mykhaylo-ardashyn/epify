@@ -3,6 +3,10 @@ class Api::V1::StoriesController < Api::V1::ApplicationController
     render_response(Api::V1::Story::Index)
   end
 
+  def show
+    render_response(Api::V1::Story::Show, id: params[:id])
+  end
+
   # def create
   #   render_response(Api::V1::Profile::Create, profile_params, { serializer: Api::V1::ProfileSerializer })
   # end
