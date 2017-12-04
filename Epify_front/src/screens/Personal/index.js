@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import Auth0 from 'react-native-auth0';
 import PropTypes from "prop-types";
-import { View, Text } from "react-native";
+import {View, Text, Platform} from "react-native";
 import ScrollWithPadding from "../../components/ScrollWithPadding";
 import Button from "../../components/Button";
 import ButtonSquare from "../../components/ButtonSquare";
 import Sound from "react-native-sound";
 import styles from "./style";
+
+import credentials from '../../config/auth0';
+
+const auth0 = new Auth0(credentials);
 
 class PersonalScreen extends Component {
 	constructor(props) {
@@ -17,6 +22,7 @@ class PersonalScreen extends Component {
 			}
 		};
 
+    this.handleLogout = this.handleLogout.bind(this);
 		this.loadSound = this.loadSound.bind(this);
 		this.playSound = this.playSound.bind(this);
 	}
@@ -100,6 +106,20 @@ class PersonalScreen extends Component {
 			// this.state.sounds[soundName].release();
 		});
 	}
+
+  handleLogout() {
+    if (Platform.OS === 'android') {
+      this.setState({ accessToken: null });
+    } else {
+      auth0.webAuth
+        .clearSession({})
+        .then(success => {
+          this.props.signOut();
+        })
+        .catch(error => console.log(error));
+    }
+  }
+
 	render() {
 		return (
 			<ScrollWithPadding>
@@ -182,6 +202,13 @@ class PersonalScreen extends Component {
 					}}
 					iconColor={"#fff"}
 				/>
+        <Text style={styles.title}>Logout</Text>
+        <Button
+          text={"Logout"}
+          iconName={"sign-out"}
+          onPress={this.handleLogout}
+          iconColor={"#fff"}
+        />
 			</ScrollWithPadding>
 		);
 	}
