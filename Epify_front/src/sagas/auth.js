@@ -3,17 +3,21 @@ import {
 	signIn,
 	signInCancel,
 	signOut,
-	attachSession,
-	detachSession,
-	attachUser
+	attachToken
 } from "../modules/auth/actions";
 import { navigateWithReset, navigate } from "../modules/navigation/actions";
 import { navTypes } from "../config/navigation";
 import config from "../config/global";
 
-export function* signInWorker({ payload = {} }) {
+export function* signInWorker( { payload = {}} ) {
+
+	console.log('signIn payload');
+	console.log(payload);
+
 	try {
-		console.log('pretending that user logged in');
+
+		yield put(attachToken(payload));
+
 		yield put(navigate(navTypes.LOGGED));
 	} catch (error) {
 		console.log(error);

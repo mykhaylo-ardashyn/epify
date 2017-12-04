@@ -124,6 +124,12 @@ class PersonalScreen extends Component {
 		return (
 			<ScrollWithPadding>
 				<View style={{ height: 10, width: "100%" }} />
+				<Button
+					text={"Get stories"}
+					iconName={"download"}
+					onPress={this.props.loadStoriesRequest}
+					iconColor={"#fff"}
+				/>
 				<Text style={styles.title}>Recenlty used</Text>
 
 				<View style={styles.squaresHolder}>
