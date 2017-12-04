@@ -8,7 +8,7 @@ class FeedScreen extends Component {
 	render() {
 		return (
 			<ScrollWithPadding>
-				<View style={{ height: 100, width: "100%" }} />
+				<View style={{ height: 100, width: "100%", backgroundColor: 'red' }} />
 				<Text>This is feed screen.</Text>
 			</ScrollWithPadding>
 		);

@@ -9,6 +9,7 @@ class ScrollWithPadding extends Component{
 				<View style={s.paddingLine} />
 				{this.props.children}
 				<View style={s.paddingLine} />
+
 			</ScrollView>
 		);
 	}
