@@ -34,6 +34,7 @@ User.all.each do |current_user|
       { name: 'Fart', description: 'lalala', rating: 274, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/fart.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/fart.jpg', author_id: current_user.id},
       { name: 'Epic Win', description: 'lalala', rating: 831, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Epic+Win.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Epic+Win.png', author_id: current_user.id},
       { name: 'Jayne', description: 'lalala', rating: 999, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Firefly+-+The+Man+They+Call+Jayne.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/jayne_hat.jpg', author_id: current_user.id},
+      { name: 'Blue Oyster', description: 'lalala', rating: 999, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Blue+Oyster.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Blue+Oyster.jpg', author_id: current_user.id},
       { name: 'Sparta', description: 'lalala', rating: 831, audio_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/sparta.mp3', image_url: 'https://s3.eu-central-1.amazonaws.com/static.cross.devlits.com/ep/Sparta.jpg', author_id: current_user.id}
     ]
   )
