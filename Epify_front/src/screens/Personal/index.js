@@ -109,7 +109,7 @@ class PersonalScreen extends Component {
 
   handleLogout() {
     if (Platform.OS === 'android') {
-      this.setState({ accessToken: null });
+      this.props.signOut();
     } else {
       auth0.webAuth
         .clearSession({})
